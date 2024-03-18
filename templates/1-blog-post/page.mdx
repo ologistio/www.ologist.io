@@ -1,14 +1,14 @@
-import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
+import imageSarahFinch from '@/images/team/sarah-finch.jpg'
 
 export const article = {
-  date: '2023-02-18',
-  title: '3 Lessons We Learned Going Back to the Office',
+  date: '2024-03-18',
+  title: 'Announcing Magi - A better way to do IaaC',
   description:
     'Earlier this year we made the bold decision to make everyone come back to the office full-time after two years working from a dressing table in the corner of their bedroom.',
   author: {
-    name: 'Leslie Alexander',
+    name: 'Sarah-Jane Finch',
     role: 'Co-Founder / CEO',
-    image: { src: imageLeslieAlexander },
+    image: { src: imageSarahFinch },
   },
 }
 
@@ -17,34 +17,27 @@ export const metadata = {
   description: article.description,
 }
 
-## 1. Efficiency is Hard to Measure
+![](./first-release.png)
 
-Although almost every practical measure of our productivity decreased significantly after returning to the office, as a management team we felt this incredible uptick in energy. We realised that there is an intangible benefit to seeing everyone’s screen at all times, that isn’t easily measurable in numbers.
+## What is Magi? {{  date: '2024-03-17T00:00Z' }}
 
-Sure, we tried to recreate this feeling during our remote days with employee monitoring software but we always had this nagging doubt that our developers had hacked their way around it.
+Magi is a command-line utility for managing large-scale infrastructure-as-code
+projects. At [Ologist](https://ologist.io), we work on these types of projects
+for institutions of all shapes and sizes - from government departments to red-brick
+universites - and we've learned a few things over the years:
 
-<TopTip>
-  Getting one of those old-timey punch clocks is a great way to monitor
-  attendance while maintaining a fun atmosphere. Expect to hear things like
-  “Back at the coalface today!”.
-</TopTip>
+* Teams spend too much time designing patterns for everyday infrastructure "modes"
+* Everyone tinkering with tooling, often to the detriment of delivering useful work
+* Onboarding other teams, and promoting collaboration on infrastructure, can require extensive upskilling
 
-![](./punch-clock.jpg)
+We are building Magi to solve those problems - by establishing a "firm-but-flexible" template system
+for common infrastructure-as-code tasks such building and deploying machine images, 
+containers and FaaS functions; deploying secure networks; and handling backup-and-restore.
 
-## 2. Turnover: a Fresh Perspective
+We're currently in the early stages, crystalising the knowledge we've gained from our
+past engagements to build a library of templates and patterns, however we're looking
+forward to showing you what we can do.
 
-We parted ways with almost all of our senior development team within the first month of going back to the office, due to some irreconcilable differences. Stressed and worried, we decided to try turn this into a positive.
+Oh, and we're always looking for [contributors](https://github.com/ologistio/magi/blob/main/CONTRIBUTING.md)! 
 
-Luckily for us, it was the same week that CoPilot launched and we were able to replace everyone with five bootcamp graduates all logged into one Github account.
-
-We have been consistently surprised at the fresh energy these new grads brought to our organisation and have since vowed to never hire anyone with more than 3 months experience again.
-
-![](./graduation.jpg)
-
-## 3. Cost Efficiency
-
-Demand is at an all time low for commercial real-estate, which means it’s never been more affordable to cram forty people into an open plan office.
-
-What’s more, is we’ve found that we can offer extremely low-cost perks like a snack cupboard or free beer in-lieu of higher salaries. For every foosball table we buy, we find we can offer around 5% less salary per job posting. Our full-time barista is the highest paid employee, after management.
-
-![](./jars.jpg)
+~ Josh Finch [[@openfinch](https://github.com/openfinch)]
