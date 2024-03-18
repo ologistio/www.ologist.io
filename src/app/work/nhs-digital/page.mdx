@@ -1,0 +1,64 @@
+import logo from '@/images/clients/nhs-digital/logo-dark.png'
+import imageHero from './hero.jpg'
+import imageAuthor from '@/images/team/josh-finch.jpg'
+
+export const caseStudy = {
+  client: 'NHS Digital',
+  title: 'Building an open platform for healthcare APIs',
+  description:
+    'NHS Digital\'s API Platform provies access to over 120 point-of-care and patient care data APIs; Ologist were there for every step of the process.',
+  summary: [
+    'The Digital arm of the National Health Service has a promising track-record of pushing the envelope of HealthTech; in 2021, Ologist were approached to help work on their flagship API Platform project.',
+    'NHS Digital\'s API Platform provides access to over 120 point-of-care and patient care data APIs; Ologist were there for every step of the process.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2021-01',
+  service: 'Digital transformation, Software engineering',
+  testimonial: {
+    author: { name: 'Tony Heap', role: 'Lead Product Owner for API Platform' },
+    content:
+      'We’re pleased with the progress we’ve made so far, especially with the overwhelmingly positive reaction we’ve had from our users. We’re looking forward to working with the health tech community to fully unlock the benefits of our API platform to further improve health and care.',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Overview
+
+The Digital arm of the National Health Service has a promising track-record of pushing the envelope of HealthTech; in 2021, Ologist were approached to help work on their flagship API Platform project.
+
+NHS Digital's API Platform would become the front-door to health and care APIs throughout NHS England and beyond; providing NHS Partners and clinician-technologists access to point-of-care and patient care functions through a single unified platform.
+
+Ologist engineers, working alongside other partners in a consortium, designed scaleable infrastructure across both Amazon Web Services and Google Cloud Platform; including a large Function-as-a-Service Middleware system, integration with NHS Login and NHS Care Identity Service, and the development of workflows for deploying APIs and documentation from OpenAPI Specifications.
+
+Our work saw the API Platform move from a prototype service in late 2020, to a Live service with over a thousand active developers and over 120 APIs.
+
+## What we did
+
+<TagList>
+  <TagListItem>Digital transformation</TagListItem>
+  <TagListItem>Software engineering</TagListItem>
+  <TagListItem>Devops engineering</TagListItem>
+  <TagListItem>Developer experience</TagListItem>
+  <TagListItem>Knowledge management</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'Josh Finch', role: 'CTO of Ologist' }}
+  image={{ src: imageAuthor }}
+>
+  Working with the NHS, in the peak of Covid-19, was an absolute privilege. In 
+  helping our health service build open, mature APIs, we got to work closely with
+  clinicians, support staff and NHS Partners to build something incredible.
+</Blockquote>
+
+{/* <StatList>
+  <StatListItem value="25%" label="Less traffic" />
+  <StatListItem value="10x" label="Page load times" />
+  <StatListItem value="15%" label="Higher infra costs" />
+  <StatListItem value="$1.2M" label="Legal fees" />
+</StatList> */}

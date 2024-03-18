@@ -1,0 +1,61 @@
+import logo from '@/images/clients/university-of-sheffield/logomark-dark.svg'
+import imageHero from './hero.png'
+import imageAuthor from '@/images/team/josh-finch.jpg'
+
+export const caseStudy = {
+  client: 'University of Sheffield',
+  title: 'Helping a University take the first steps into hybrid cloud',
+  description:
+    'Working alongside our colleagues at Perform Partners, Ologist engineers uplifted over 20 years of legacy in only 12 months.',
+  summary: [
+    'Few words inspire quite as much dread in an engineer than \'Legacy Oracle Migration\', but not Perform Partners; and not Ologist.',
+    'Perform reached out to us to provide transformation services around the University\'s legacy Oracle application stack, and large non-managed codebase of over 100 applications.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2024-03',
+  service: 'Digital transformation, Hybrid cloud, Devops Engineering',
+  testimonial: {
+    author: { name: 'Paul Rhodes', role: 'Director for Perform Partners' },
+    content:
+      '[Ologist] significantly improved client application and reporting performance. 90 minute job run times, down to 6 minutes - a 1500% improvement.',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Overview
+
+Our partner organisation Perform Partners reached out to Ologist to provide transformation services around the University of Sheffield\'s legacy Oracle application stack, and large non-managed codebase of over 100 applications.
+
+Working with the IT Services department, over the course of 12-months, we designed long-term cultural patterns that the University could progressively adopt across their vast software estate to deal with systemic cultural and technical problems.
+
+Ologist also took the lead on a comprehensive training and knowledge-transfer project, upskilling key members of the University's team and bringing them up to speed with our ways of working. Targetting key personnel, we were able to maximise our impact within the organisation.
+
+You can find out more about our engineering achievements in Perform Partners' case study [Delivering Innovation, Efficiency, and Security in Higher Education](https://perform-partners.com/work/delivering-innovation-efficiency-and-security-in-higher-education/).
+
+## What we did
+
+<TagList>
+  <TagListItem>Digital transformation</TagListItem>
+  <TagListItem>Hybrid cloud</TagListItem>
+  <TagListItem>Devops Engineering</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'Josh Finch', role: 'CTO of Ologist' }}
+  image={{ src: imageAuthor }}
+>
+  Working alongside Perform Partners on this project was an incredible opportunity,
+  especially given the scale and diversity of the challenges it posed. 
+</Blockquote>
+{/* 
+<StatList>
+  <StatListItem value="20%" label="Churn rate" />
+  <StatListItem value="5x" label="Uninstalls" />
+  <StatListItem value="2.3" label="App store rating" />
+  <StatListItem value="8" label="Pending lawsuits" />
+</StatList> */}
