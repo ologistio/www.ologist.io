@@ -12,6 +12,7 @@ import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
 import imageSarahFinch from '@/images/team/sarah-finch.jpg'
 import imageJoshFinch from '@/images/team/josh-finch.jpg'
+import imageLewisFord from '@/images/team/1655111981350.jpg'
 import { loadArticles } from '@/lib/mdx'
 
 function Culture() {
@@ -60,6 +61,11 @@ const team = [
         name: 'Josh Finch',
         role: 'Co-Founder / CTO',
         image: { src: imageJoshFinch },
+      },
+      {
+        name: 'Lewis Ford',
+        role: 'Chief Operations Officer',
+        image: { src: imageLewisFord },
       },
     ],
   },
