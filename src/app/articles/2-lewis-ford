@@ -1,0 +1,44 @@
+import imageJoshFinch from '@/images/team/josh-finch.jpg'
+
+export const article = {
+  date: '2025-07-01',
+  title: 'Lewis Ford joins Ologist as COO',
+  description:
+    'A seasoned digital leader joins Ologist to help us scale smart, agile transformation for complex organisations.',
+  author: {
+    name: 'Josh Finch',
+    role: 'Co-Founder / CTO',
+    image: { src: imageJoshFinch },
+  },
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+We’re thrilled to share that **Lewis Ford** has joined Ologist as our Chief Operations Officer.
+
+Lewis brings a sharp eye for organisational complexity and a deep background in programme delivery,
+business analysis, and enterprise architecture. He’s worked across sectors — from health tech
+to retail — helping large teams cut through the noise and deliver real results.
+
+Most recently, Lewis was a Principal Consultant at Aire Logic, where he focused on enterprise
+architecture and interoperability for public sector clients. Before that, he led delivery teams
+and business analysis efforts across a wide range of digital transformation projects.
+
+At Ologist, we help institutions of all sizes tackle messy, mission-critical problems
+— and Lewis joining us marks a big step forward in that mission. He’ll be helping us scale our practice,
+sharpen our delivery approach, and keep us laser-focused on doing work that matters.
+
+> “I care about building great teams, cutting through complexity, and delivering work that
+actually makes a difference,” says Lewis. “That’s exactly what Ologist is about, and I’m excited to
+help us do it at scale.”
+
+We’re lucky to have him. Welcome aboard, Lewis.
+
+---
+
+If you’re new here: Ologist builds tools and services to help institutions build long-term solutions to real problems.
+
+We're still early, but we’re assembling something special. If you’re curious, check out [our work](https://ologist.io/work), or [get in touch](mailto:hello@ologist.io).
