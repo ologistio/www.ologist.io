@@ -62,11 +62,11 @@ const team = [
         role: 'Co-Founder / CTO',
         image: { src: imageJoshFinch },
       },
-      {
-        name: 'Lewis Ford',
-        role: 'Chief Operations Officer',
-        image: { src: imageLewisFord },
-      },
+      //{
+      //  name: 'Lewis Ford',
+      //  role: 'Chief Operations Officer',
+      //  image: { src: imageLewisFord },
+      //},
     ],
   },
 ]
