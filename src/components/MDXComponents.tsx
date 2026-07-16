@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { Blockquote } from '@/components/Blockquote'
 import { Border } from '@/components/Border'
 import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
+import { PullQuote } from '@/components/PullQuote'
 import { StatList, StatListItem } from '@/components/StatList'
 import { TagList, TagListItem } from '@/components/TagList'
 
@@ -12,6 +13,12 @@ export const MDXComponents = {
     ...props
   }: React.ComponentPropsWithoutRef<typeof Blockquote>) {
     return <Blockquote className={clsx('my-32', className)} {...props} />
+  },
+  PullQuote({
+    className,
+    ...props
+  }: React.ComponentPropsWithoutRef<typeof PullQuote>) {
+    return <PullQuote className={clsx('my-32', className)} {...props} />
   },
   img: function Img({
     className,

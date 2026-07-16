@@ -1,6 +1,12 @@
 import { type Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
+// Brand colours. `neutral-950` is the template's black and `white` its light
+// tone, so remapping those two makes every existing class pick up the brand
+// palette (including opacity variants like `neutral-950/5` and `bg-white/10`).
+const woodsmoke = '#161616'
+const haze = '#F6F6F6'
+
 export default {
   content: ['./src/**/*.{js,jsx,mdx,ts,tsx}'],
   theme: {
@@ -18,6 +24,26 @@ export default {
       '7xl': ['4rem', { lineHeight: '4.5rem' }],
     },
     extend: {
+      colors: {
+        woodsmoke,
+        haze,
+        white: haze,
+        // Neutral ramp interpolated between Haze (50) and Woodsmoke (950) so
+        // every grey on the site sits between the two brand colours.
+        neutral: {
+          50: haze,
+          100: '#f1f1f1',
+          200: '#e2e2e2',
+          300: '#d3d3d3',
+          400: '#a5a5a5',
+          500: '#787878',
+          600: '#595959',
+          700: '#484848',
+          800: '#303030',
+          900: '#222222',
+          950: woodsmoke,
+        },
+      },
       borderRadius: {
         '4xl': '2.5rem',
       },

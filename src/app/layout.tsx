@@ -6,8 +6,8 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Ologist',
-    default: 'Ologist - Award winning digital transformation agency based in Leeds',
+    template: '%s · Ologist',
+    default: 'Ologist · Trusted by organisations where failure isn’t an option',
   },
 }
 

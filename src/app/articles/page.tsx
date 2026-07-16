@@ -22,14 +22,20 @@ export default async function Blog() {
 
   return (
     <>
-      <PageIntro eyebrow="Books & Articles" title="Insights into our work">
+      <PageIntro eyebrow="Books & Articles" title="Things we've learned along the way.">
         <p>
-          Stay up-to-date with the work we&apos;re doing, good practices we&apos;ve picked up along the way, and news about our open source projects;
-          as well as our long-form books on digital permaculture.
+          Thoughts on engineering, organisational change, Digital Permaculture, open-source projects, and the lessons we&apos;ve learned helping institutions navigate complex technical challenges.
         </p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
+        {articles.length === 0 && (
+          <FadeIn>
+            <p className="text-xl text-neutral-600">
+              We&apos;re working on our first posts. Check back soon.
+            </p>
+          </FadeIn>
+        )}
         <div className="space-y-24 lg:space-y-32">
           {articles.map((article) => (
             <FadeIn key={article.href}>

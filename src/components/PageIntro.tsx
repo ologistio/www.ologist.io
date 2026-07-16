@@ -35,7 +35,7 @@ export function PageIntro({
         </h1>
         <div
           className={clsx(
-            'mt-6 max-w-3xl text-xl text-neutral-600',
+            'mt-6 max-w-3xl text-xl text-neutral-600 space-y-4 [&_p]:leading-relaxed',
             centered && 'mx-auto',
           )}
         >

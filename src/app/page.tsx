@@ -1,5 +1,5 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
+import Image, { type StaticImageData } from 'next/image'
 import Link from 'next/link'
 
 import { ContactSection } from '@/components/ContactSection'
@@ -9,44 +9,50 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
-import logoUoSDark from '@/images/clients/university-of-sheffield/logo-dark.svg'
-import logoUoSLight from '@/images/clients/university-of-sheffield/logo-light.svg'
-import logoNHSDDark from '@/images/clients/nhs-digital/logo-dark.png'
-import logoNHSDLight from '@/images/clients/nhs-digital/logo-light.png'
+import logoUoSLight from '@/images/clients/university-of-sheffield/logomark-light.png'
+import logoNHSDDark from '@/images/clients/nhs-digital/logo-colour-dark.png'
+import logoNHSDLight from '@/images/clients/nhs-digital/logo-colour-light.png'
 import imageLaptop from '@/images/laptop.jpg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 
-const clients = [
-  ['University of Sheffield', logoUoSLight],
-  ['NHS Digital', logoNHSDLight],
+const clients: Array<[string, StaticImageData, string]> = [
+  ['University of Sheffield', logoUoSLight, '/work/university-of-sheffield'],
+  ['NHS England', logoNHSDLight, '/work/nhs-england'],
 ]
 
 function Clients() {
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
-      <Container>
+    <Container className="mt-24 sm:mt-32 lg:mt-56">
+      <div className="-mx-6 rounded-4xl bg-neutral-950 px-6 pb-20 pt-12 sm:mx-0 sm:pb-32 sm:pt-20 md:px-12">
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            We work with some incredible institutions
+            Trusted by organisations where failure isn’t an option.
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
         <FadeInStagger faster>
           <ul
             role="list"
-            className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
+            className="mt-10 flex flex-col items-center gap-y-10 sm:flex-row sm:justify-evenly"
           >
-            {clients.map(([client, logo]) => (
+            {clients.map(([client, logo, href]) => (
               <li key={client}>
                 <FadeIn>
-                  <Image src={logo} alt={client} height={124} unoptimized />
+                  <Link href={href} aria-label={`${client} case study`}>
+                    <Image
+                      src={logo}
+                      alt={client}
+                      className="h-20 w-auto sm:h-28"
+                      unoptimized
+                    />
+                  </Link>
                 </FadeIn>
               </li>
             ))}
           </ul>
         </FadeInStagger>
-      </Container>
-    </div>
+      </div>
+    </Container>
   )
 }
 
@@ -58,13 +64,17 @@ function CaseStudies({
   return (
     <>
       <SectionIntro
-        title="Long-term solutions to real problems"
-        className="mt-24 sm:mt-32 lg:mt-40"
+        title="Complex systems don’t fix themselves."
+        className="mt-24 sm:mt-32 lg:mt-40 "
       >
         <p>
-          Our work is at the intersection of People, Culture and Technology;
-          finding how to harness the talent and flow of an institution to
-          do great things.
+          The problems tend to build quietly. Duplicated systems, rushed handovers, manual workarounds and technology nobody really wants to touch anymore.
+        </p>
+        <p>
+          Add years of workarounds and temporary fixes to that and even small problems become expensive, and difficult to untangle.
+        </p>
+        <p>
+          That’s why we exist. We help institutions make meaningful technical change without creating more issues along the way.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -74,12 +84,11 @@ function CaseStudies({
               <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
                 <h3>
                   <Link href={caseStudy.href}>
-                    <span className="absolute inset-0 rounded-3xl" />
+                    <span className="absolute inset-0" />
                     <Image
                       src={caseStudy.logo}
                       alt={caseStudy.client}
-                      className="h-16 w-16"
-                      unoptimized
+                      className="h-16 w-16 p"
                     />
                   </Link>
                 </h3>
@@ -115,12 +124,13 @@ function Services() {
     <>
       <SectionIntro
         eyebrow="Services"
-        title="We help you explore new digital landscapes."
+        title="The work behind the work."
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          Ologist works with our clients to design long-term digital
-          practices, and build a culture of digital permaculture.
+          We work alongside your teams to build systems and ways of working
+          that hold up over time, and keep working long after we&apos;ve moved
+          on.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -135,22 +145,23 @@ function Services() {
             </FadeIn>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-            <ListItem title="Digital permaculture">
-              Ologist was founded with the core principle that good practice is
-              not disposable, but should instead grow and develop with the needs
-              of the organisation. We call this Digital Permaculture.
+            <ListItem title="Building systems that still make sense decades later">
+              Good practice shouldn’t be forgotten the second priorities change.
+
+              Ologist was founded around the idea that systems, processes and engineering cultures should evolve alongside the organisations using them. We call this Digital Permaculture.
             </ListItem>
-            <ListItem title="Engineering practice">
-              Engineers often know best when it comes to building good practice,
-              and at Ologist we work with them to break down silos and promote
-              interdisciplinary collaboration.
+            <ListItem title="Helping engineering teams work better together">
+              Strong engineering practices are built through trust and clear ways of working.
+
+              We work closely with engineering teams to reduce friction, improve communication and build practices that continue functioning long after a project ends.
             </ListItem>
-            <ListItem title="Culture coaching">
-              Change happens at it&apos;s own pace, and forcing it can be harmful;
-              Ologist work with your teams to build a culture that works for them
-              while supporting the wider organisational strategy.
+            <ListItem title="Introducing change without introducing more problems">
+Large-scale organisational change doesn’t happen overnight.
+
+We help you build long lasting change in ways that are practical, sustainable and realistic for the people expected to work within it every day.
+
             </ListItem>
-            <ListItem title="Legacy uplift">
+            <ListItem title="Modernising legacy systems without the chaos">
               Transformation implies a starting point, and Ologist understand the
               challenges that legacy systems and practice can pose; our approach
               includes uplifting legacy, instead of working around it.
@@ -164,7 +175,7 @@ function Services() {
 
 export const metadata: Metadata = {
   description:
-    'We are a development studio working at the intersection of design and technology.',
+    'Ologist helps institutions untangle ageing systems, awkward processes and years of technical baggage - with long-term engineering, not trend-chasing.',
 }
 
 export default async function Home() {
@@ -175,12 +186,13 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-            Award winning digital transformation agency based in Leeds
+            Your systems, but better.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            We are a digital transformation agency working with large institutions
-            to solve big problems. We&apos;re small, agile and very very good at what we do,
-            and we&apos;d love to show you how we can help.
+            We help institutions sort out ageing systems, awkward processes and the technical baggage that builds up over time.
+          </p>
+          <p className="mt-6 text-xl text-neutral-600">
+            Ologist is a small team by design. That means fewer layers, more direct communication and experienced people doing the work properly.
           </p>
         </FadeIn>
       </Container>
@@ -191,7 +203,7 @@ export default async function Home() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'NHS Digital', logo: logoNHSDDark }}
+        client={{ name: 'NHS England', logo: logoNHSDDark }}
       >
         We’re pleased with the progress we’ve made so far, especially with the
         overwhelmingly positive reaction we’ve had from our users.

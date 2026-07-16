@@ -52,7 +52,7 @@ export function SectionIntro({
         {children && (
           <div
             className={clsx(
-              'mt-6 text-xl',
+              'mt-6 space-y-4 text-xl [&_p]:leading-relaxed',
               invert ? 'text-neutral-300' : 'text-neutral-600',
             )}
           >

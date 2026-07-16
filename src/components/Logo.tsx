@@ -1,37 +1,34 @@
-import { useId } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 
-import imageWhite from '@/images/ologist-logo-white.png'
-import imageBlack from '@/images/ologist-logo-black.png'
+import imageHaze from '@/images/ologist-logo-haze.png'
+import imageWoodsmoke from '@/images/ologist-logo-woodsmoke.png'
 
+// The logo is a 2.51:1 wordmark. Callers set the height (e.g. `h-8`); `w-auto`
+// keeps the aspect ratio. `invert` picks the type colour for the background:
+// haze (light) on dark, woodsmoke (dark) on light.
 export function Logomark({
+  className,
   invert = false,
-  ...props
-}: React.ComponentPropsWithoutRef<'svg'> & {
+}: {
+  className?: string
   invert?: boolean
 }) {
-  let id = useId()
-  if (invert) {
-    return <Image src={imageBlack} width={64} alt="Ologist logo" />;
-  } else {
-    return <Image src={imageWhite} width={64} alt="Ologist logo" />;
-  }
+  return (
+    <Image
+      src={invert ? imageHaze : imageWoodsmoke}
+      alt="Ologist"
+      className={clsx('w-auto', className)}
+    />
+  )
 }
 
 export function Logo({
   className,
   invert = false,
-  fillOnHover = false,
-  ...props
-}: React.ComponentPropsWithoutRef<'svg'> & {
+}: {
+  className?: string
   invert?: boolean
-  fillOnHover?: boolean
 }) {
-  return (
-    <Logomark
-      preserveAspectRatio="xMinYMid meet"
-      invert={invert}
-    />
-  )
+  return <Logomark className={className} invert={invert} />
 }

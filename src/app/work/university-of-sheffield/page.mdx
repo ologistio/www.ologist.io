@@ -4,21 +4,21 @@ import imageAuthor from '@/images/team/josh-finch.jpg'
 
 export const caseStudy = {
   client: 'University of Sheffield',
-  title: 'Helping a University take the first steps into hybrid cloud',
+  title: 'Rehoming twenty years of Oracle, and the teams who ran it',
   description:
-    'Working alongside our colleagues at Perform Partners, Ologist engineers uplifted over 20 years of legacy in only 12 months.',
+    'The University of Sheffield ran its student records on twenty years of legacy Oracle; Ologist engineers moved the estate into AWS, and the teams into modern practice.',
   summary: [
-    'Few words inspire quite as much dread in an engineer than \'Legacy Oracle Migration\', but not Perform Partners; and not Ologist.',
-    'Perform reached out to us to provide transformation services around the University\'s legacy Oracle application stack, and large non-managed codebase of over 100 applications.',
+    'In 2022, the University of Sheffield\'s student record system sat on two decades of legacy Oracle; Perform Partners brought Ologist in to help move it, and everything around it, into the cloud.',
+    'The University of Sheffield ran its student records on twenty years of legacy Oracle; Ologist engineers moved the estate into AWS, and the teams into modern practice.',
   ],
   logo,
   image: { src: imageHero },
-  date: '2024-03',
+  date: '2025-08',
   service: 'Digital transformation, Hybrid cloud, Devops Engineering',
   testimonial: {
-    author: { name: 'Paul Rhodes', role: 'Director for Perform Partners' },
+    author: { name: 'Arthur Clune', role: 'Chief Technology Officer, University of Sheffield' },
     content:
-      '[Ologist] significantly improved client application and reporting performance. 90 minute job run times, down to 6 minutes - a 1500% improvement.',
+      'We let everybody back in on Monday and it was all just fine.',
   },
 }
 
@@ -27,15 +27,31 @@ export const metadata = {
   description: caseStudy.description,
 }
 
+<PullQuote {...caseStudy.testimonial} />
+
 ## Overview
 
-Our partner organisation Perform Partners reached out to Ologist to provide transformation services around the University of Sheffield\'s legacy Oracle application stack, and large non-managed codebase of over 100 applications.
+The University of Sheffield is a Russell Group institution with more than 36,000 students, and at the centre of it sat a student record system that had quietly run everything, from first application to graduation to alumni, for over twenty years. It ran on Oracle: two ageing databases, Oracle Forms and Reports, Oracle APEX, and more than 560 applications and integrations threaded through 1,376 interconnected systems. Documentation was thin, the platforms were looked after by separate teams, and batch jobs ran long enough that starting one was a reason to go and put the kettle on.
 
-Working with the IT Services department, over the course of 12-months, we designed long-term cultural patterns that the University could progressively adopt across their vast software estate to deal with systemic cultural and technical problems.
+Rather than refresh two decades of hardware and hope, the university chose AWS. Perform Partners led the programme, and brought Ologist in from August 2022. We stayed for three years, working across the whole of it: the analysis of an estate nobody fully remembered, the AWS build, the cutover, and the part we care most about - what the university's own teams could do once we left.
 
-Ologist also took the lead on a comprehensive training and knowledge-transfer project, upskilling key members of the University's team and bringing them up to speed with our ways of working. Targetting key personnel, we were able to maximise our impact within the organisation.
+### Twenty years of Oracle
 
-You can find out more about our engineering achievements in Perform Partners' case study [Delivering Innovation, Efficiency, and Security in Higher Education](https://perform-partners.com/work/delivering-innovation-efficiency-and-security-in-higher-education/).
+Forms and Reports has been called legacy since before most of the university's students were born. It still ran the place, and technology that has given twenty years of service deserves a careful landing rather than a demolition. We uplifted both Oracle databases and rehomed Forms, Reports and APEX into AWS on patterns the old estate never had: auto-scaling, resilience by design, infrastructure defined as code. The processes stayed the same. The platform underneath them did not.
+
+### One long weekend
+
+The cutover began on a Thursday night before a May bank holiday, well inside our first year. Testing started on Sunday, and on Monday morning everybody logged back in as if nothing had happened. The results were immediate: the reporting job that took 90 minutes now takes 6, fifteen times faster, and the university gained a disaster recovery story its old estate could never tell.
+
+### The teams who ran it
+
+The platforms we migrated had been managed by different teams in different silos, and the estate showed it. So alongside the engineering we introduced the practices that make an estate one thing rather than several: source control, code review, infrastructure as code, devops as a working method rather than a job title. Then we made it stick. University engineers joined us in pairs, usually one from operations and one from development, working real tickets with an Ologist engineer alongside them. No classroom, no slideware; production work, guided. Between 50 and 60 of the university's 310-strong IT department came through it.
+
+### Three years on
+
+We rolled off in August 2025. The work went on to win a Computing Cloud Excellence Award, and the university has kept moving without us: retiring its oldest applications, refining others for the cloud, exploring what a modern estate makes possible. You can read Perform Partners' account of the programme in [their case study](https://perform-partners.com/work/delivering-innovation-efficiency-and-security-in-higher-education/), and AWS published [one of its own](https://aws.amazon.com/partners/success/university-of-sheffield-perform-partners/).
+
+The migration took a year. Making it stick took two more. That is what we mean by Digital Permaculture: the job is not moving systems, it is leaving behind teams who can move their own.
 
 ## What we did
 
@@ -43,19 +59,22 @@ You can find out more about our engineering achievements in Perform Partners' ca
   <TagListItem>Digital transformation</TagListItem>
   <TagListItem>Hybrid cloud</TagListItem>
   <TagListItem>Devops Engineering</TagListItem>
+  <TagListItem>Legacy modernisation</TagListItem>
+  <TagListItem>Training and knowledge transfer</TagListItem>
 </TagList>
 
 <Blockquote
   author={{ name: 'Josh Finch', role: 'CTO of Ologist' }}
   image={{ src: imageAuthor }}
 >
-  Working alongside Perform Partners on this project was an incredible opportunity,
-  especially given the scale and diversity of the challenges it posed. 
+  Oracle Forms gets called legacy like it is an insult. It ran a university for
+  twenty years. Our job was to give it a better home, and to make sure the teams
+  who inherited it never needed us again.
 </Blockquote>
-{/* 
+
 <StatList>
-  <StatListItem value="20%" label="Churn rate" />
-  <StatListItem value="5x" label="Uninstalls" />
-  <StatListItem value="2.3" label="App store rating" />
-  <StatListItem value="8" label="Pending lawsuits" />
-</StatList> */}
+  <StatListItem value="15x" label="The 90-minute deploy, now 6 minutes" />
+  <StatListItem value="560+" label="Applications and integrations moved in one weekend" />
+  <StatListItem value="50+" label="University engineers upskilled, two at a time" />
+  <StatListItem value="3 years" label="From first commit to final handover" />
+</StatList>

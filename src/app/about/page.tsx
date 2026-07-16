@@ -9,10 +9,9 @@ import { GridList, GridListItem } from '@/components/GridList'
 import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
-import { StatList, StatListItem } from '@/components/StatList'
 import imageSarahFinch from '@/images/team/sarah-finch.jpg'
 import imageJoshFinch from '@/images/team/josh-finch.jpg'
-import imageLewisFord from '@/images/team/1655111981350.jpg'
+import imageLewisFord from '@/images/team/lewis-ford.jpg'
 import { loadArticles } from '@/lib/mdx'
 
 function Culture() {
@@ -62,11 +61,11 @@ const team = [
         role: 'Co-Founder / CTO',
         image: { src: imageJoshFinch },
       },
-      //{
-      //  name: 'Lewis Ford',
-      //  role: 'Chief Operations Officer',
-      //  image: { src: imageLewisFord },
-      //},
+      {
+       name: 'Lewis Ford',
+       role: 'Chief Operations Officer',
+       image: { src: imageLewisFord },
+      },
     ],
   },
 ]
@@ -131,49 +130,60 @@ export default async function About() {
 
   return (
     <>
-      <PageIntro eyebrow="About us" title="We create digital permaculture">
-        <p>
-        Ologist are a digital transformation agency working with large institutions
-        to solve big problems.
-        </p>
+      <PageIntro eyebrow="About us" title="We create Digital Permaculture">
+        <p>Ologist was founded in 2020 by Sarah-Jane and Josh Finch.</p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
-            Ologist was founded by Sarah-Jane and Josh Finch in 2020, after
-            years of frustrations with the startup sector, with the goal
-            of rejecting trend-chasing, disposable technology, and persuing
-            our goal of Digital Permaculture.
+            After years working across startups, scale-ups and large
+            organisations, we kept seeing the same pattern. Systems built in a
+            hurry. Short-term decisions becoming permanent. Technology choices
+            driven by trends rather than outcomes.
           </p>
           <p>
-            We work with large institutions - government departments, universities,
-            local councils - to build long-term solutions to real problems. We&apos;re
-            not here to push &quot;trendy&quot; tech-stacks or &quot;magic&quot; methodologies, just
-            solid, proven engineering practices.
+            Projects delivered successfully that nobody wanted to maintain. New
+            technology replacing old technology without addressing the
+            underlying issues. Teams inheriting systems they didn&apos;t
+            understand and processes they couldn&apos;t change.
+          </p>
+          <p>Everything looked successful on paper.</p>
+          <p>The reality was often very different.</p>
+          <p>
+            On the surface, many of these decisions seemed baffling. Systems
+            that made no sense, processes that felt arbitrary, and decisions
+            that appeared to have been made for no reason at all.
           </p>
           <p>
-            We&apos;re also a great place to work. From our progressive compensation,
-            flexible working and industry- leading training and development;
-            we try to foster a culture brings out the best in engineers. 
+            Then came the moment we now look for in every organisation: the
+            point where everything suddenly clicks, and you understand exactly
+            why things ended up this way.
           </p>
+          <p>
+            That&apos;s where Digital Permaculture began. The idea that
+            technology, processes and engineering cultures should be designed to
+            grow and adapt over time, rather than being replaced every few
+            years.
+          </p>
+          <p>
+            Today, we work with universities, healthcare organisations,
+            government departments and other institutions facing complex
+            technical challenges.
+          </p>
+          <p>Not to introduce more change.</p>
+          <p>To help make sense of the change that&apos;s already happening.</p>
         </div>
       </PageIntro>
-      {/* <Container className="mt-16">
-        <StatList>
-          <StatListItem value="35" label="Underpaid employees" />
-          <StatListItem value="52" label="Placated clients" />
-          <StatListItem value="$25M" label="Invoices billed" />
-        </StatList>
-      </Container> */}
-
       <Culture />
 
       <Team />
 
-      <PageLinks
-        className="mt-24 sm:mt-32 lg:mt-40"
-        title="Books & Articles"
-        intro="Our team of engineers, designers and developers have a lot to talk about. Insights into the work we're doing, good practices we've picked up along the way, and news about our open source projects."
-        pages={blogArticles}
-      />
+      {blogArticles.length > 0 && (
+        <PageLinks
+          className="mt-24 sm:mt-32 lg:mt-40"
+          title="Books & Articles"
+          intro="Our team of engineers, designers and developers have a lot to talk about. Insights into the work we're doing, good practices we've picked up along the way, and news about our open source projects."
+          pages={blogArticles}
+        />
+      )}
 
       <ContactSection />
     </>

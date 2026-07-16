@@ -10,8 +10,9 @@ import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { Testimonial } from '@/components/Testimonial'
-import logoNHSD from '@/images/clients/nhs-digital/logo-dark.png'
+import logoNHSD from '@/images/clients/nhs-digital/logo-colour-dark.png'
 import logoUoS from '@/images/clients/university-of-sheffield/logo-dark.svg'
+import logoUoSMark from '@/images/clients/university-of-sheffield/logomark-dark.svg'
 import { formatDate } from '@/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 
@@ -91,8 +92,8 @@ function CaseStudies({
 }
 
 const clients = [
-  ['NHS Digital', logoNHSD],
-  ['University of Sheffield', logoUoS],
+  ['University of Sheffield', logoUoSMark],
+  ['NHS England', logoNHSD],
 ]
 
 function Clients() {
@@ -103,18 +104,20 @@ function Clients() {
           You’re in good company
         </h2>
       </FadeIn>
-      <FadeInStagger className="mt-10" faster>
-        <Border as={FadeIn} />
+      <FadeInStagger faster>
         <ul
           role="list"
-          className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
+          className="mt-10 flex flex-col items-center gap-y-10 sm:flex-row sm:justify-evenly"
         >
           {clients.map(([client, logo]) => (
-            <li key={client} className="group">
-              <FadeIn className="overflow-hidden">
-                <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
-                  <Image src={logo} alt={client} unoptimized />
-                </Border>
+            <li key={client}>
+              <FadeIn>
+                <Image
+                  src={logo}
+                  alt={client}
+                  className="h-20 w-auto sm:h-28"
+                  unoptimized
+                />
               </FadeIn>
             </li>
           ))}
@@ -137,12 +140,13 @@ export default async function Work() {
     <>
       <PageIntro
         eyebrow="Our work"
-        title="Proven solutions for real-world problems."
+        title="Built for the long term."
       >
-        <p>          
-          Ologist works with clients on real-world problems - we&apos;re not
-          interested flash-in-the-pan tech trends, just long-term, proven
-          solutions that will grow and develop with their organisation.
+        <p>
+          Most technical problems don&apos;t appear overnight, and they rarely disappear that way either.
+        </p>
+        <p>
+          We help organisations make meaningful improvements to systems, processes and engineering practices in ways that are practical, sustainable and built to last.
         </p>
       </PageIntro>
 

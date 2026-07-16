@@ -1,0 +1,128 @@
+import logo from '@/images/clients/kevel/logo-light.png'
+import imageHero from './hero.jpg'
+import imageAuthor from './tim-ewald.jpg'
+
+export const caseStudy = {
+  client: 'Kevel',
+  title: 'Building the cross-cloud estate behind a four-retailer media alliance',
+description:
+    'Kevel\'s platform now powers a shared media network across Tesco, B&Q, John Lewis and Waitrose; Ologist engineers replicated its AWS estate onto Google Cloud in less than six months.',
+  summary: [
+    'Kevel builds the infrastructure behind retail media for some of the world\'s biggest retailers and marketplaces; in 2026, Ologist were engaged to take its production estate cross-cloud.',
+    'The dunnhumby network alliance runs campaigns across Tesco, B&Q, John Lewis and Waitrose on Kevel\'s platform; Ologist replicated the production AWS estate onto Google Cloud so the pilots could launch on time.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2026-08',
+  service: 'Google Cloud Platform, Multi-cloud infrastructure',
+  testimonial: {
+    author: { name: 'Tim Ewald', role: 'Chief Technology Officer' },
+    content:
+      'words from Tim here',
+  },
+}
+
+export const metadata = {
+  title: 'Kevel case study: AWS to GCP cross-cloud estate',
+  description: caseStudy.description,
+}
+
+<PullQuote {...caseStudy.testimonial} />
+
+## The platform behind the platforms
+
+[Kevel](https://www.kevel.com/) builds the infrastructure behind retail media. Its APIs let
+retailers and marketplaces run their own advertising businesses - the
+approach that built Amazon's ad business, made available to everyone
+else. Retailers like The Home Depot, Chewy and Dollar General run
+their media networks on it.
+
+The platform grew up on AWS. After more than a decade in production it
+ran deep: ad decisioning that answers in milliseconds, the data
+pipelines feeding it, and the accumulated design decisions of a system
+that has been quietly serving ads since 2010.
+
+## One announcement, one condition
+
+In June 2026, [dunnhumby](https://www.dunnhumby.com/) - the data science business behind Tesco's
+Clubcard - announced the dunnhumby network alliance: a single route
+for brands to run campaigns across Tesco, B&Q, John Lewis and
+Waitrose, with more retailers expected to follow. Kevel is the
+technology partner behind it.
+
+UK retail media is forecast to reach £8.6bn by 2030, and the alliance
+is one of the most serious attempts yet to organise it. The pilots had
+a launch window: summer 2026.
+
+Underneath the announcement sat a practical condition. dunnhumby's
+estate runs on Google Cloud, and the alliance's decisioning needed to
+sit next to the data it depends on. Kevel's platform ran on AWS.
+
+## A second home, not a migration
+
+Ologist engineers worked alongside Kevel's team to replicate the
+estate onto GCP. Not a lift-and-shift, and not a rewrite. A second
+home. The AWS platform kept serving customers throughout, while the
+GCP estate came up alongside it, service by service, until the two
+matched.
+
+That meant mapping years of AWS decisions onto their Google Cloud
+equivalents [name the two or three mappings actually worth naming -
+data stores, streaming, compute]. It meant infrastructure the teams
+could define once and maintain across both clouds, so the estates
+evolve together rather than drift apart [confirm this matches the IaC
+approach before it goes live]. And it meant proving parity properly -
+[latency, decisioning behaviour, failover: whichever were the real
+tests] - because an ad server that answers slowly might as well not
+have answered at all.
+
+[Optional paragraph: the hardest problem. Data replication, identity,
+networking - whichever story Kevel's engineers tell in the pub is the
+one that belongs here.]
+
+## Launched on time
+
+The alliance pilots went live in summer 2026, running campaigns across
+household and DIY, health and beauty, and grocery. Kevel's platform
+now runs where its most important partnership lives.
+
+[One metric, agreed with Kevel: time to production parity, share of
+traffic served from GCP, or similar. One number is enough.]
+
+"[Quote from Kevel. An engineering voice will land better than a
+marketing one.]"
+
+## The work behind the work
+
+Most platforms are shaped by where they started. The useful work is
+making sure that isn't where they have to stay. Kevel's estate can now
+follow its market - new partners, new regions, new clouds - without
+being rebuilt each time.
+
+That's what we mean by Digital Permaculture. Systems designed to grow
+and adapt alongside the organisations using them, rather than being
+replaced every few years.
+
+## What we did
+
+<TagList>
+  <TagListItem>Kicked ass</TagListItem>
+  <TagListItem>Took names</TagListItem>
+  <TagListItem>Did great work</TagListItem>
+  <TagListItem>Learned about friendship</TagListItem>
+  <TagListItem>Permacultured some digitals</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'Tim Ewald', role: 'Chief Technology Officer' }}
+  image={{ src: imageAuthor }}
+>
+  More words from Tim here.
+</Blockquote>
+
+<StatList>
+  <StatListItem value="25%" label="Less traffic" />
+  <StatListItem value="10x" label="Page load times" />
+  <StatListItem value="15%" label="Higher infra costs" />
+  <StatListItem value="$1.2M" label="Legal fees" />
+</StatList>

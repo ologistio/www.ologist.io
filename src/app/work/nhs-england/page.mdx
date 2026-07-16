@@ -1,0 +1,82 @@
+import logo from '@/images/clients/nhs-digital/logo-colour-dark.png'
+import imageHero from './hero.jpg'
+import imageAuthor from '@/images/team/sarah-finch.jpg'
+
+export const caseStudy = {
+  client: 'NHS England',
+  title: 'Building the front door for healthcare APIs in the UK',
+  description:
+    'NHS England\'s API platform is the front door to healthcare APIs across the country; Ologist spent three years helping build it, from prototype to live national service.',
+  summary: [
+    'In 2020, NHS Digital set out to build a single front door for health and care APIs across England; Ologist joined the consortium behind it and stayed for three years.',
+    'NHS England\'s API platform is the front door to healthcare APIs across the country; Ologist spent three years helping build it, from prototype to live national service.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2021-01',
+  service: 'Digital transformation, Software engineering',
+  testimonial: {
+    author: { name: 'Tony Heap', role: 'Lead Product Owner for API Platform, NHS Digital' },
+    content:
+      'We\'re pleased with the progress we\'ve made so far, especially with the overwhelmingly positive reaction we\'ve had from our users. We\'re looking forward to working with the health tech community to fully unlock the benefits of our API platform to further improve health and care.',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+<PullQuote {...caseStudy.testimonial} />
+
+## Overview
+
+In 2020, NHS Digital asked developers how easy it was to integrate with its APIs. The answer came back: two out of five. The feedback behind the score was blunt. Getting set up was hard, the process was complicated, and the learning curve was steep enough that suppliers were giving up before they had begun. Some of the APIs assumed you were already inside the NHS network before you could call them at all.
+
+The answer was the API platform: a single front door for health and care APIs across England. Find an API, read its documentation in plain English, try it in a sandbox, onboard digitally, go live. Ordinary expectations anywhere else; a quiet revolution in healthcare software. And there was no quiet period to build it in. The platform came up while the health service was carrying the heaviest load in its history, with some of its earliest traffic serving the Covid-19 response.
+
+### Our part of it
+
+Ologist engineers joined the consortium behind the platform, led by [Aire Logic](https://www.airelogic.com/), and stayed from 2020 to 2023. Within a programme that built collectively, three things were ours to look after.
+
+The first was the cloud infrastructure underneath it all: an estate spanning Amazon Web Services and Google Cloud Platform, with Apigee at the front. The second was identity. In healthcare, who is asking matters as much as what they are asking for, so we did much of the work connecting the platform to the Care Identity Service, which lets clinicians authenticate with smartcards or modern alternatives, and to NHS login, which does the same for patients and the public.
+
+The third was the developer experience, and it is the one we still talk about. We made the OpenAPI Specification the source of truth, with documentation and deployment generated from the spec rather than maintained beside it. Documentation that is generated cannot drift. Documentation that is maintained usually does.
+
+### The idea that outlasted us
+
+That approach outlived the engagement. After Ologist rolled off in 2023, NHS England built it out as [Proxygen](https://digital.nhs.uk/developer/api-catalogue/proxy-generator), working from a design we left behind. Today it is the standard route for publishing an API on the platform: one specification producing the proxy, the documentation and the onboarding, for every producer that walks through the door.
+
+### Five years on
+
+The platform moved from prototype in late 2020 to a live national service, handling 1.6 billion transactions before it had even left beta. It has kept moving since. The nine APIs in production at beta exit are nearer fifty today, behind a catalogue of over 180 APIs and integrations, more than 100 of them in production. The platform runs at platinum service level, and much of its code is written in the open.
+
+NHS Digital itself merged into NHS England in 2023. The front door stayed open.
+
+That is what we mean by Digital Permaculture: systems that keep improving after the people who built them have moved on. We are proud of the infrastructure. We are prouder of what got built on top of it after we left.
+
+## What we did
+
+<TagList>
+  <TagListItem>Digital transformation</TagListItem>
+  <TagListItem>Cloud infrastructure</TagListItem>
+  <TagListItem>Developer experience</TagListItem>
+  <TagListItem>Identity and access</TagListItem>
+  <TagListItem>Software engineering</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'Sarah-Jane Finch', role: 'Co-Founder / CEO' }}
+  image={{ src: imageAuthor }}
+>
+  Working with the NHS in the peak of Covid-19 was an absolute privilege. In
+  helping our health service build open, mature APIs, we got to work closely with
+  clinicians, support staff and NHS Partners to build something incredible.
+</Blockquote>
+
+<StatList>
+  <StatListItem value="2 / 5" label="The integration score that started it all" />
+  <StatListItem value="3 years" label="Working alongside the platform team" />
+  <StatListItem value="1.6bn" label="Live transactions before it left beta" />
+  <StatListItem value="180+" label="APIs and integrations in today's catalogue" />
+</StatList>
