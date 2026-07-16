@@ -5,6 +5,7 @@ import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { MDXComponents } from '@/components/MDXComponents'
 import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
+import { siteUrl } from '@/lib/site'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 
 export default async function CaseStudyLayout({
@@ -19,8 +20,42 @@ export default async function CaseStudyLayout({
     .filter(({ metadata }) => metadata !== caseStudy)
     .slice(0, 2)
 
+  let articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: caseStudy.title,
+    description: caseStudy.description,
+    datePublished: caseStudy.date,
+    author: { '@type': 'Organization', name: 'Ologist Ltd', url: siteUrl },
+    publisher: { '@type': 'Organization', name: 'Ologist Ltd', url: siteUrl },
+    mainEntityOfPage: `${siteUrl}${caseStudy.href}`,
+  }
+
+  let breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Work', item: `${siteUrl}/work` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: caseStudy.client,
+        item: `${siteUrl}${caseStudy.href}`,
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <article className="mt-24 sm:mt-32 lg:mt-40">
         <header>
           <PageIntro eyebrow="Case Study" title={caseStudy.title} centered>

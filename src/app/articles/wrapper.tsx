@@ -3,6 +3,7 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { MDXComponents } from '@/components/MDXComponents'
 import { PageLinks } from '@/components/PageLinks'
+import { siteUrl } from '@/lib/site'
 import { formatDate } from '@/lib/formatDate'
 import { type Article, type MDXEntry, loadArticles } from '@/lib/mdx'
 
@@ -18,8 +19,47 @@ export default async function BlogArticleWrapper({
     .filter(({ metadata }) => metadata !== article)
     .slice(0, 2)
 
+  let articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    datePublished: article.date,
+    author: { '@type': 'Person', name: article.author.name },
+    publisher: { '@type': 'Organization', name: 'Ologist Ltd', url: siteUrl },
+    mainEntityOfPage: `${siteUrl}${article.href}`,
+  }
+
+  let breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Books & Articles',
+        item: `${siteUrl}/articles`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: article.title,
+        item: `${siteUrl}${article.href}`,
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
           <header className="mx-auto flex max-w-5xl flex-col text-center">

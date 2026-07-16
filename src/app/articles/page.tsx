@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: 'Books & Articles',
   description:
     'Stay up-to-date with the work we\'re doing, good practices we\'ve picked up along the way, and news about our open source projects.',
+  // Empty until the first posts ship: keep it out of the index and unlinked from
+  // nav/footer/sitemap. Re-index and restore links when content exists (B8/CN-02).
+  robots: { index: false, follow: true },
 }
 
 export default async function Blog() {

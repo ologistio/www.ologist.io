@@ -122,7 +122,8 @@ function Team() {
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Ologist are a digital transformation agency working with large institutions to solve big problems.'
+    'Ologist are a digital transformation agency working with large institutions to solve big problems.',
+  alternates: { canonical: '/about' },
 }
 
 export default async function About() {

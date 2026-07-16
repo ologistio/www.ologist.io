@@ -82,16 +82,12 @@ function CaseStudies({
           {caseStudies.map((caseStudy) => (
             <FadeIn key={caseStudy.href} className="flex">
               <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
-                <h3>
-                  <Link href={caseStudy.href}>
-                    <span className="absolute inset-0" />
-                    <Image
-                      src={caseStudy.logo}
-                      alt={caseStudy.client}
-                      className="h-16 w-16 p"
-                    />
-                  </Link>
-                </h3>
+                <Image
+                  src={caseStudy.logo}
+                  alt={caseStudy.client}
+                  className="h-16 w-16"
+                  unoptimized
+                />
                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
                   <time
                     dateTime={caseStudy.date.split('-')[0]}
@@ -104,9 +100,12 @@ function CaseStudies({
                   </span>
                   <span>Case study</span>
                 </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
-                  {caseStudy.title}
-                </p>
+                <h3 className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                  <Link href={caseStudy.href}>
+                    <span className="absolute inset-0" />
+                    {caseStudy.title}
+                  </Link>
+                </h3>
                 <p className="mt-4 text-base text-neutral-600">
                   {caseStudy.description}
                 </p>
@@ -176,6 +175,7 @@ We help you build long lasting change in ways that are practical, sustainable an
 export const metadata: Metadata = {
   description:
     'Ologist helps institutions untangle ageing systems, awkward processes and years of technical baggage - with long-term engineering, not trend-chasing.',
+  alternates: { canonical: '/' },
 }
 
 export default async function Home() {

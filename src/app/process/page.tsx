@@ -77,6 +77,7 @@ export const metadata: Metadata = {
   title: 'Our Process',
   description:
     'Ologist works with our clients to design long-term digital practices, and build cultures of Digital Permaculture',
+  alternates: { canonical: '/process' },
 }
 
 export default function Process() {

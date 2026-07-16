@@ -138,7 +138,7 @@ function Navigation() {
       </NavigationRow>
       <NavigationRow>
         <NavigationItem href="/process">Our Process</NavigationItem>
-        <NavigationItem href="/articles">Books & Articles</NavigationItem>
+        <NavigationItem href="/contact">Work with us</NavigationItem>
       </NavigationRow>
     </nav>
   )
@@ -171,6 +171,12 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
 
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
+      <a
+        href="#main"
+        className="sr-only z-50 rounded-lg bg-neutral-950 px-4 py-2 text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
+      >
+        Skip to content
+      </a>
       <header>
         <div
           className="absolute left-0 right-0 top-2 z-40 pt-14"
@@ -258,7 +264,9 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
             interactive
           />
 
-          <main className="w-full flex-auto">{children}</main>
+          <main id="main" className="w-full flex-auto">
+            {children}
+          </main>
 
           <Footer />
         </motion.div>
