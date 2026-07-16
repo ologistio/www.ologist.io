@@ -58,7 +58,8 @@ function ContactDetails() {
 
 export const metadata: Metadata = {
   title: 'Work with us',
-  description: 'Let’s work together. We can’t wait to hear from you.',
+  description:
+    'Talk to Ologist about legacy modernisation, cloud migration and engineering-culture work - senior-led help for institutions where failure is not an option.',
   alternates: { canonical: '/contact' },
 }
 

@@ -13,7 +13,7 @@ import { SectionIntro } from '@/components/SectionIntro'
 export const metadata: Metadata = {
   title: 'Digital Permaculture',
   description:
-    'Digital Permaculture is the practice of designing systems, processes and engineering cultures to grow and adapt with an organisation over time, rather than being replaced every few years.',
+    'Digital Permaculture: designing systems, teams and cultures that grow and adapt with an organisation over time, instead of being replaced every few years.',
   alternates: { canonical: '/digital-permaculture' },
 }
 
