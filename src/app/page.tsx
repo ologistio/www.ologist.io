@@ -147,7 +147,14 @@ function Services() {
             <ListItem title="Building systems that still make sense decades later">
               Good practice shouldn’t be forgotten the second priorities change.
 
-              Ologist was founded around the idea that systems, processes and engineering cultures should evolve alongside the organisations using them. We call this Digital Permaculture.
+              Ologist was founded around the idea that systems, processes and engineering cultures should evolve alongside the organisations using them. We call this{' '}
+              <Link
+                href="/digital-permaculture"
+                className="font-semibold text-neutral-950 underline hover:text-neutral-700"
+              >
+                Digital Permaculture
+              </Link>
+              .
             </ListItem>
             <ListItem title="Helping engineering teams work better together">
               Strong engineering practices are built through trust and clear ways of working.

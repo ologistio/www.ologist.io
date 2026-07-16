@@ -1,8 +1,10 @@
 import { type Metadata } from 'next'
+import Link from 'next/link'
 
+import { Button } from '@/components/Button'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
-import { GridList, GridListItem } from '@/components/GridList'
+import { FadeIn } from '@/components/FadeIn'
 import { GridPattern } from '@/components/GridPattern'
 import { PageIntro } from '@/components/PageIntro'
 import { SectionIntro } from '@/components/SectionIntro'
@@ -35,39 +37,20 @@ function Values() {
         </p>
       </SectionIntro>
 
-      <Container className="mt-24">
-        <GridList>
-          <GridListItem title="Let engineers engineer">
-            Utilise engineers as the core driver of value and professional
-            leadership in technical roles, allowing them to build a flexible,
-            emergent practice within the organisation.
-          </GridListItem>
-          <GridListItem title="Ownership, not management">
-            Ownership means taking responsibility for a programme, management
-            means divesting that responsibility; organisations should foster a
-            culture of voluntary and meaningful ownership.
-          </GridListItem>
-          <GridListItem title="Silos are an anti-pattern">
-            Sharing knowledge is vital to Digital Permaculture; establishing
-            practices for sharing expertise and responsibilities encourages
-            resilience and interdisciplinary collaboration.
-          </GridListItem>
-          <GridListItem title="Diversity is good for everyone">
-            The best teams are diverse and inclusive, it&apos;s as simple as
-            that; and organisations need to go above and beyond to ask the hard
-            questions and engage with non-traditional communities.
-          </GridListItem>
-          <GridListItem title="No lies; no pretending">
-            No bums on seats. No warm bodies. Only diverse teams of skilled
-            people making great things together. Transparency and collaboration
-            is the only path to realising Digital Permaculture.
-          </GridListItem>
-          <GridListItem title="Flexible, not disposible">
-            Permaculture means thinking of problems in the long-term. Solutions
-            should grow with the organisation over time, avoiding the
-            anti-pattern of intermittent, costly overhauls.
-          </GridListItem>
-        </GridList>
+      <Container className="mt-16">
+        <FadeIn>
+          <p className="max-w-3xl text-base text-neutral-600">
+            Digital Permaculture rests on six principles, from &ldquo;let
+            engineers engineer&rdquo; to &ldquo;flexible, not
+            disposable&rdquo;. Each one is about growing systems, teams and
+            practices that keep improving long after we have gone.
+          </p>
+          <div className="mt-8">
+            <Button href="/digital-permaculture">
+              Explore the principles
+            </Button>
+          </div>
+        </FadeIn>
       </Container>
     </div>
   )
@@ -100,7 +83,16 @@ export default function Process() {
           people, processes and technology improve together. Focusing on one
           while ignoring the others rarely works for long.
         </p>
-        <p>That&apos;s the thinking behind Digital Permaculture.</p>
+        <p>
+          That&apos;s the thinking behind{' '}
+          <Link
+            href="/digital-permaculture"
+            className="font-semibold text-neutral-950 underline hover:text-neutral-700"
+          >
+            Digital Permaculture
+          </Link>
+          .
+        </p>
         <p>
           Building systems, teams and ways of working that continue improving
           long after a project is finished.

@@ -1,5 +1,6 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Border } from '@/components/Border'
 import { ContactSection } from '@/components/ContactSection'
@@ -159,7 +160,14 @@ export default async function About() {
             why things ended up this way.
           </p>
           <p>
-            That&apos;s where Digital Permaculture began. The idea that
+            That&apos;s where{' '}
+            <Link
+              href="/digital-permaculture"
+              className="font-semibold text-neutral-950 underline hover:text-neutral-700"
+            >
+              Digital Permaculture
+            </Link>{' '}
+            began. The idea that
             technology, processes and engineering cultures should be designed to
             grow and adapt over time, rather than being replaced every few
             years.

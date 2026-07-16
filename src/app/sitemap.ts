@@ -8,6 +8,7 @@ const staticRoutes = [
   '/work',
   '/about',
   '/process',
+  '/digital-permaculture',
   '/contact',
   '/privacy',
 ]

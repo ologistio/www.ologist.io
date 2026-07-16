@@ -26,6 +26,7 @@ const navigation = [
     links: [
       { title: 'About', href: '/about' },
       { title: 'Process', href: '/process' },
+      { title: 'Digital Permaculture', href: '/digital-permaculture' },
       { title: 'Work with us', href: '/contact' },
       { title: 'Privacy', href: '/privacy' },
     ],
